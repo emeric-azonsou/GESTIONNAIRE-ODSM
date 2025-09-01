@@ -1,0 +1,104 @@
+[
+  {
+    "users": [
+      {
+        "id": 1,
+        "name": "Lisa Parker",
+        "status": "online",
+        "profile": "assets/images/users/avatar-2.jpg",
+        "desc": "me: ok, No problem ..."
+      },
+      {
+        "id": 2,
+        "name": "Frank Thomas",
+        "status": "online",
+        "profile": "assets/images/users/avatar-3.jpg",
+        "desc": "Let's start, Are you ...",
+        "messagecount" : 8
+      },
+      {
+        "id": 3,
+        "name": "Clifford Taylor",
+        "status": "away",
+        "nickname": "CT",
+        "profile": "",
+        "desc": "me: i am busy now ..."
+      },
+      {
+        "id": 4,
+        "name": "Janette Caster",
+        "status": "online",
+        "profile": "assets/images/users/avatar-4.jpg",
+        "desc": "How are you ?"
+      },
+      {
+        "id": 5,
+        "name": "Sarah Beattie",
+        "status": "online",
+        "profile": "assets/images/users/avatar-5.jpg",
+        "desc": "I will go there, Can ...",
+        "messagecount" : 5
+      },
+      {
+        "id": 6,
+        "name": "Nellie Cornett",
+        "status": "away",
+        "profile": "assets/images/users/avatar-6.jpg",
+        "desc": "me: only $120 for ...",
+        "messagecount" : 2
+      },
+      {
+        "id": 7,
+        "name": "Chris Kiernan",
+        "status": "online",
+        "nickname": "CK",
+        "profile": "",
+        "desc": "me: ok, No problem ..."
+        
+      },
+      {
+        "id": 8,
+        "name": "Edith Evans",
+        "status": "away",
+        "nickname": "EE",
+        "profile": "",
+        "desc": "Let's start, Are you ..."
+      },
+      {
+        "id": 9,
+        "name": "Joseph Siegel",
+        "status": "away",
+        "profile": "assets/images/users/avatar-7.jpg",
+        "desc": "Document sent",
+        "messagecount" : 3
+      },
+      {
+        "id": 10,
+        "name": "Kelvin levhoota",
+        "status": "away",
+        "profile": "assets/images/users/avatar-8.jpg",
+        "desc": "Available for interview ?"
+      },
+      {
+        "id": 11,
+        "name": "Jene Cooper",
+        "status": "away",
+        "profile": "assets/images/users/avatar-9.jpg",
+        "desc": "Video call ended"
+      },  {
+        "id": 12,
+        "name": "Aelene Mccoy",
+        "status": "away",
+        "profile": "assets/images/users/avatar-10.jpg",
+        "desc": "Hi, Jones new project ..."
+      }
+    ],
+    "channels": [
+      { "id": 10, "name": "Landing Design", "members": 12, "messagecount": 7 },
+      { "id": 11, "name": "General", "members": 10 },
+      { "id": 12, "name": "Project Tasks", "members": 24,"messagecount": 2 },
+      { "id": 13, "name": "Meeting", "members": 8 },
+      { "id": 14, "name": "Reporting", "members": 16 }
+    ]
+  }
+]
