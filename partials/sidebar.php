@@ -20,13 +20,13 @@
                 <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="index.php">
-                        <i class="ti ti-brand-google-home"></i> <span>Tableau de bord</span>
+                        <i class="ti bi-speedometer2"></i> <span>Tableau de bord</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="#sidebarProducts" class="nav-link menu-link collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProducts">
-                        <i class="ti ti-folders"></i> <span>Produits </span>
+                        <i class="ti bi-box"></i> <span>Produits </span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarProducts">
                         <ul class="nav nav-sm flex-column">
@@ -45,7 +45,7 @@
 
                 <li class="nav-item">
                     <a href="#sidebarVentes" class="nav-link menu-link collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarVentes">
-                        <i class="ti ti-file-invoice"></i> <span>Ventes</span>
+                        <i class="ti bi-cart-check"></i> <span>Ventes</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarVentes">
                         <ul class="nav nav-sm flex-column">
@@ -61,7 +61,7 @@
 
                 <li class="nav-item">
                     <a href="#sidebarHistory" class="nav-link menu-link collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarHistory">
-                        <i class="ti ti-calendar"></i> <span>Historique des ventes</span>
+                        <i class="ti bi-calendar-check"></i> <span>Historique des ventes</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarHistory">
                         <ul class="nav nav-sm flex-column">
@@ -77,7 +77,7 @@
 
                 <li class="nav-item">
                     <a href="#sidebarSuivi" class="nav-link menu-link collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSuivi">
-                        <i class="ti ti-messages"></i> <span>Suivi personnel</span>
+                        <i class="ti bi-person-lines-fill"></i> <span>Suivi personnel</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarSuivi">
                         <ul class="nav nav-sm flex-column">
