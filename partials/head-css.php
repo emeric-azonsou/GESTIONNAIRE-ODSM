@@ -8,3 +8,5 @@
 <link href="assets/css/app.min.css" rel="stylesheet" type="text/css">
 <!-- custom Css-->
 <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css">
+<!-- Css Personnalisé-->
+<link href="assets/css/style.css" rel="stylesheet" type="text/css">
