@@ -2,7 +2,7 @@
 <div class="app-menu navbar-menu">
     <!-- LOGO -->
     <div class="navbar-brand-box">
-        <a href="index.php" >
+        <a href="index.php">
             <span class="logo">ODSM</span>
         </a>
         <button type="button" class="btn btn-sm p-0 fs-3xl header-item float-end btn-vertical-sm-hover shadow-none" id="vertical-hover">
@@ -22,6 +22,25 @@
                     <a class="nav-link menu-link" href="index.php">
                         <i class="ti ti-brand-google-home"></i> <span>Tableau de bord</span>
                     </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#sidebarProducts" class="nav-link menu-link collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProducts">
+                        <i class="ti ti-folders"></i> <span>Produits </span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarProducts">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="apps-invoices-list.php" class="nav-link">Liste des produits</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="apps-invoices-overview.php" class="nav-link">Vue détaillée</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="apps-invoices-overview.php" class="nav-link">Recherche</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
 
                 <li class="nav-item">
@@ -67,25 +86,6 @@
                             </li>
                             <li class="nav-item">
                                 <a href="apps-invoices-overview.php" class="nav-link">Comparaisons basiques</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#sidebarProducts" class="nav-link menu-link collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProducts">
-                        <i class="ti ti-folders"></i> <span>Produits </span>
-                    </a>
-                    <div class="collapse menu-dropdown" id="sidebarProducts">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="apps-invoices-list.php" class="nav-link">Liste des produits</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="apps-invoices-overview.php" class="nav-link">Vue détaillée</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="apps-invoices-overview.php" class="nav-link">Recherche</a>
                             </li>
                         </ul>
                     </div>
