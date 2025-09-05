@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 // Configuration de la base de données
 $host = 'localhost';
