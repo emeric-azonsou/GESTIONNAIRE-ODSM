@@ -69,18 +69,10 @@
                                         <table class="table table-centered align-middle table-custom-effect table-nowrap mb-0">
                                             <thead class="table-light">
                                                 <tr>
-                                                    <th>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="checkAll">
-                                                            <label class="form-check-label" for="checkAll"></label>
-                                                        </div>
-                                                    </th>
-                                                    <th scope="col" class="sort cursor-pointer" data-sort="invoice_id">ID</th>
-                                                    <th scope="col" class="sort cursor-pointer" data-sort="customer_name">Customer Name</th>
-                                                    <th scope="col" class="sort cursor-pointer" data-sort="email">Email</th>
-                                                    <th scope="col" class="sort cursor-pointer" data-sort="create_date">Create Date</th>
-                                                    <th scope="col" class="sort cursor-pointer" data-sort="due_date">Due Date</th>
-                                                    <th scope="col" class="sort cursor-pointer" data-sort="amount">Amount</th>
+                                                    <th scope="col" class="sort cursor-pointer" data-sort="customer_name">Nom produit</th>
+                                                    <th scope="col" class="sort cursor-pointer" data-sort="create_date">Date d'arrive</th>
+                                                    <th scope="col" class="sort cursor-pointer" data-sort="due_date">Date de peramption</th>
+                                                    <th scope="col" class="sort cursor-pointer" data-sort="amount">prix</th>
                                                     <th scope="col" class="sort cursor-pointer" data-sort="status">Status</th>
                                                     <th scope="col">Action</th>
                                                 </tr>
@@ -99,7 +91,7 @@
                                     <div class="row align-items-center mt-4 pt-3" id="pagination-element">
                                         <div class="col-sm">
                                             <div class="text-muted text-center text-sm-start">
-                                                Showing <span class="fw-semibold">10</span> of <span class="fw-semibold">15</span> Results
+                                                Showing <span class="fw-semibold">1</span> of <span class="fw-semibold">1</span> Results
                                             </div>
                                         </div><!--end col-->
                                         <div class="col-sm-auto mt-3 mt-sm-0">
@@ -108,7 +100,7 @@
                                                     Previous
                                                 </a>
                                                 <ul class="pagination listjs-pagination mb-0"></ul>
-                                                <a class="page-item pagination-next" href="#">
+                                                <a class="page-item pagination-next disabled" href="#">
                                                     Next
                                                 </a>
                                             </div>
