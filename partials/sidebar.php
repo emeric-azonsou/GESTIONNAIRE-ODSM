@@ -34,9 +34,6 @@
                                 <a href="apps-invoices-list.php" class="nav-link">Liste des produits</a>
                             </li>
                             <li class="nav-item">
-                                <a href="apps-invoices-overview.php" class="nav-link">Vue détaillée</a>
-                            </li>
-                            <li class="nav-item">
                                 <a href="apps-invoices-overview.php" class="nav-link">Recherche</a>
                             </li>
                         </ul>
@@ -51,9 +48,6 @@
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
                                 <a href="apps-invoices-list.php" class="nav-link">Nouvelle vente</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="apps-invoices-overview.php" class="nav-link">Écran d'encaissement</a>
                             </li>
                         </ul>
                     </div>
