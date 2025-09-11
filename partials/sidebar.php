@@ -34,7 +34,7 @@
                                 <a href="apps-invoices-list.php" class="nav-link">Liste des produits</a>
                             </li>
                             <li class="nav-item">
-                                <a href="apps-invoices-overview.php" class="nav-link">Recherche</a>
+                                <a href="search.php" class="nav-link">Recherche</a>
                             </li>
                         </ul>
                     </div>
