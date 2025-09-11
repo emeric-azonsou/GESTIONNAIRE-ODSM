@@ -69,12 +69,16 @@
                                         <table class="table table-centered align-middle table-custom-effect table-nowrap mb-0">
                                             <thead class="table-light">
                                                 <tr>
-                                                    <th scope="col" class="sort cursor-pointer" data-sort="customer_name">Nom produit</th>
-                                                    <th scope="col" class="sort cursor-pointer" data-sort="create_date">Date d'arrive</th>
-                                                    <th scope="col" class="sort cursor-pointer" data-sort="due_date">Date de peramption</th>
-                                                    <th scope="col" class="sort cursor-pointer" data-sort="amount">prix</th>
-                                                    <th scope="col" class="sort cursor-pointer" data-sort="status">Status</th>
-                                                    <th scope="col">Action</th>
+                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="customer_name">Nom</th>
+                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="description">Description</th>
+                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="presentation">Présentation</th>
+                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="prix_achat">Prix d'achat</th>
+                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="prix_vente">Prix de vente</th>
+                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="quantite_min">Quantité minimale</th>
+                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="date_arrivee">Date d'arrivée</th>
+                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="date_peremption">Date de péremption</th>
+                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="status">Statut</th>
+                                                    <th scope="col" class="px-3">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="list form-check-all" id="invoice-list-data">
