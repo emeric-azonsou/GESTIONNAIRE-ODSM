@@ -61,6 +61,28 @@
                     </div>
                     <!--end row-->
 
+                    <div class="row mb-3">
+    <div class="col-sm-6">
+        <div class="search-box">
+            <input type="text" id="search-input" class="form-control" placeholder="Rechercher un produit...">
+            <i class="ri-search-line search-icon"></i>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="d-flex align-items-center justify-content-end gap-2">
+            <select class="form-select w-auto" id="status-filter">
+                <option value="">Tous les statuts</option>
+                <option value="Disponible">Disponible</option>
+                <option value="Indisponible">Indisponible</option>
+            </select>
+            <select class="form-select w-auto" id="presentation-filter">
+                <option value="">Toutes les présentations</option>
+                </select>
+            <button class="btn btn-secondary" id="reset-filters">Réinitialiser</button>
+        </div>
+    </div>
+</div>
+
                     <div class="row" id="invoiceList">
                         <div class="col-lg-12">
                             <div class="card">
@@ -68,17 +90,13 @@
                                     <div class="table-responsive table-card">
                                         <table class="table table-centered align-middle table-custom-effect table-nowrap mb-0">
                                             <thead class="table-light">
-                                                <tr>
-                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="customer_name">Nom</th>
-                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="description">Description</th>
-                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="presentation">Présentation</th>
-                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="prix_achat">Prix d'achat</th>
-                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="prix_vente">Prix de vente</th>
-                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="quantite_min">Quantité minimale</th>
-                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="date_arrivee">Date d'arrivée</th>
-                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="date_peremption">Date de péremption</th>
-                                                    <th scope="col" class="sort cursor-pointer px-3" data-sort="status">Statut</th>
-                                                    <th scope="col" class="px-3">Action</th>
+                                                <tr class="">
+                                                    <th scope="col" class="sort cursor-pointer" data-sort="customer_name">Nom produit</th>
+                                                    <th scope="col" class="sort cursor-pointer" data-sort="create_date">Date d'arrive</th>
+                                                    <th scope="col" class="sort cursor-pointer" data-sort="due_date">Date de peramption</th>
+                                                    <th scope="col" class="sort cursor-pointer" data-sort="amount">prix</th>
+                                                    <th scope="col" class="sort cursor-pointer" data-sort="status">Status</th>
+                                                    <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="list form-check-all" id="invoice-list-data">
@@ -94,9 +112,11 @@
                                     </div>
                                     <div class="row align-items-center mt-4 pt-3" id="pagination-element">
                                         <div class="col-sm">
-                                            <div class="text-muted text-center text-sm-start">
-                                                Showing <span class="fw-semibold">1</span> of <span class="fw-semibold">1</span> Results
-                                            </div>
+                                            <div class="col-sm">
+    <div class="text-muted text-center text-sm-start">
+        Showing <span class="fw-semibold" id="start-item">0</span> to <span class="fw-semibold" id="end-item">0</span> of <span class="fw-semibold" id="total-items">0</span> Results
+    </div>
+</div>
                                         </div><!--end col-->
                                         <div class="col-sm-auto mt-3 mt-sm-0">
                                             <div class="pagination-wrap hstack justify-content-center gap-2">

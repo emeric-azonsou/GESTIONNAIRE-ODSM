@@ -82,6 +82,7 @@
     <?php include 'partials/customizer.php'; ?>
     <?php include 'partials/vendor-scripts.php'; ?>
     <script src="assets/js/app.js"></script>
+    
 </body>
 
 </html>
