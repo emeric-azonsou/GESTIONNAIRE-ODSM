@@ -69,17 +69,17 @@
         </div>
     </div>
     <div class="col-sm-6">
-        <div class="d-flex align-items-center justify-content-end gap-2">
-            <select class="form-select w-auto" id="status-filter">
-                <option value="">Tous les statuts</option>
-                <option value="Disponible">Disponible</option>
-                <option value="Indisponible">Indisponible</option>
-            </select>
-            <select class="form-select w-auto" id="presentation-filter">
-                <option value="">Toutes les présentations</option>
-                </select>
-            <button class="btn btn-secondary" id="reset-filters">Réinitialiser</button>
-        </div>
+        <div class="">
+    <select id="status-filter">
+        <option value="">Tous les statuts</option>
+        <option value="Disponible">Disponible</option>
+        <option value="Indisponible">Indisponible</option>
+    </select>
+    <select id="presentation-filter">
+        <option value="">Toutes les présentations</option>
+    </select>
+    <button id="reset-filters">Réinitialiser</button>
+</div>
     </div>
 </div>
 
