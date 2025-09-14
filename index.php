@@ -2,7 +2,9 @@
 
 <head>
     <?php includeFileWithVariables('partials/title-meta.php', array('title' => 'Dashboard')); ?>
-    <?php include 'partials/head-css.php'; ?>
+    <?php
+    require 'functions/authCheck.php';
+    include 'partials/head-css.php'; ?>
 </head>
 
 <body class="dashboard-topbar-wrapper">

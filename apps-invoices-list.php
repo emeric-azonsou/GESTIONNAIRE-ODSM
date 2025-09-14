@@ -2,6 +2,7 @@
 
 <head>
     <?php
+    require 'functions/authCheck.php';
     $title = 'Invoice List';
     include('partials/title-meta.php');
     ?>
