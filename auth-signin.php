@@ -5,6 +5,7 @@
     
     <?php 
     include 'partials/head-css.php';
+    
     include "functions/authSignin.php";
     $title = 'Sign In';
     include('partials/title-meta.php');
