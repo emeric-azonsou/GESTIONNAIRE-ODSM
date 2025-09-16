@@ -7,7 +7,7 @@ header('Content-Type: application/json');
 
 try {
     // Préparer la requête SQL
-    $stmt = $pdo->prepare("SELECT * FROM produit");
+   $stmt = $pdo->prepare("SELECT * FROM produit WHERE (est_supprime IS NULL OR est_supprime = 0)");
 
     // Exécuter la requête
     $stmt->execute();
