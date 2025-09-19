@@ -422,18 +422,9 @@ try {
                             </div>
 
                             <!-- Boutons d'action -->
-                            <div class="action-buttons">
-                                <form method="POST">
-                                    <button type="submit" name="deconnecter" class="btn btn-logout">
-                                        <i class="ri-logout-box-r-line"></i> Se déconnecter
-                                    </button>
-                                </form>
+                            
                                 
-                                <?php if ($is_admin): ?>
-                                <a href="modifier-profil.php" class="btn btn-edit">
-                                    <i class="ri-edit-line"></i> Modifier le profil
-                                </a>
-                                <?php endif; ?>
+                               
                             </div>
                         </div>
 
@@ -448,7 +439,7 @@ try {
                                     </div>
                                     <div class="admin-title">Gestion Utilisateurs</div>
                                     <div class="admin-desc">Gérer tous les utilisateurs</div>
-                                    <a href="gestion-utilisateurs.php" class="admin-link">Accéder</a>
+                                    <a href="gestionUtilisateur.php" class="admin-link">Accéder</a>
                                 </div>
                                 
                                 <div class="admin-card">
@@ -460,14 +451,7 @@ try {
                                     <a href="rapports.php" class="admin-link">Accéder</a>
                                 </div>
                                 
-                                <div class="admin-card">
-                                    <div class="admin-icon">
-                                        <i class="ri-settings-3-line"></i>
-                                    </div>
-                                    <div class="admin-title">Paramètres</div>
-                                    <div class="admin-desc">Configurer le système</div>
-                                    <a href="parametres.php" class="admin-link">Accéder</a>
-                                </div>
+                                
                             </div>
                         </div>
                         <?php endif; ?>

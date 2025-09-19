@@ -12,31 +12,31 @@ require 'functions/authCheck.php';
 // Connexion à la base de données
 include "functions/config.php";
 
-    // Récupérer les informations de l'utilisateur connecté
-    $user_id = $_SESSION['user_id'] ?? null;
-    $is_admin = false;
+// Récupérer les informations de l'utilisateur connecté
+$user_id = $_SESSION['user_id'] ?? null;
+$is_admin = false;
 
-    if ($user_id) {
-        $stmt = $pdo->prepare("
-            SELECT u.*, r.nom_role 
-            FROM utilisateur u 
-            JOIN role r ON u.id_role = r.id_role 
-            WHERE u.id_utilisateur = ?
-        ");
-        $stmt->execute([$user_id]);
-        $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
+if ($user_id) {
+    $stmt = $pdo->prepare("
+        SELECT u.*, r.nom_role 
+        FROM utilisateur u 
+        JOIN role r ON u.id_role = r.id_role 
+        WHERE u.id_utilisateur = ?
+    ");
+    $stmt->execute([$user_id]);
+    $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // Vérifier si l'utilisateur est admin
-        $is_admin = ($user_data['nom_role'] === 'admin');
-        
-        if (!$is_admin) {
-            header('Location: index.php');
-            exit();
-        }
-    } else {
-        header('Location: login.php');
+    // Vérifier si l'utilisateur est admin
+    $is_admin = ($user_data['nom_role'] === 'admin');
+    
+    if (!$is_admin) {
+        header('Location: index.php');
         exit();
     }
+} else {
+    header('Location: login.php');
+    exit();
+}
 
 // Récupérer les rôles pour le formulaire
 $roles = $pdo->query("SELECT * FROM role ORDER BY nom_role")->fetchAll(PDO::FETCH_ASSOC);
@@ -133,13 +133,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
 
                     if ($_POST['id_utilisateur'] == $user_id) {
-                        throw new Exception("Vous ne pouvez pas supprimer votre propre compte");
+                        throw new Exception("Vous ne pouvez pas désactiver votre propre compte");
                     }
 
-                    $stmt = $pdo->prepare("DELETE FROM utilisateur WHERE id_utilisateur = ?");
+                    // Désactiver l'utilisateur au lieu de le supprimer
+                    $stmt = $pdo->prepare("UPDATE utilisateur SET actif = 0 WHERE id_utilisateur = ?");
                     $stmt->execute([$_POST['id_utilisateur']]);
 
-                    $message_success = "Utilisateur supprimé avec succès";
+                    $message_success = "Utilisateur désactivé avec succès";
                     break;
             }
         } catch (Exception $e) {
@@ -251,6 +252,12 @@ $users = $pdo->query("
         .password-container {
             position: relative;
         }
+        
+        .alert-info {
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+            color: #0c5460;
+        }
     </style>
 </head>
 
@@ -273,6 +280,10 @@ $users = $pdo->query("
                                 <?php if (!empty($message_success)): ?>
                                 <div class="alert alert-success"><?php echo htmlspecialchars($message_success); ?></div>
                                 <?php endif; ?>
+
+                                <div class="alert alert-info">
+                                    <strong>Information:</strong> La "suppression" d'un utilisateur le désactive simplement. Il ne pourra plus se connecter mais ses données (y compris ses commandes) seront conservées.
+                                </div>
 
                                 <div class="mb-3">
                                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
@@ -317,7 +328,7 @@ $users = $pdo->query("
                                                                 <i class="ri-edit-line"></i>
                                                             </button>
                                                             <?php if ($user['id_utilisateur'] != $user_id): ?>
-                                                            <button class="btn btn-sm btn-danger" onclick="confirmDelete(<?php echo $user['id_utilisateur']; ?>)">
+                                                            <button class="btn btn-sm btn-danger" onclick="confirmDelete(<?php echo $user['id_utilisateur']; ?>, '<?php echo htmlspecialchars($user['prenom'] . ' ' . $user['nom']); ?>')">
                                                                 <i class="ri-delete-bin-line"></i>
                                                             </button>
                                                             <?php endif; ?>
@@ -441,23 +452,26 @@ $users = $pdo->query("
         </div>
     </div>
 
-    <!-- Modal de suppression -->
+    <!-- Modal de suppression (désactivation) -->
     <div class="modal fade" id="deleteUserModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Confirmation</h5>
+                    <h5 class="modal-title">Confirmation de désactivation</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form method="POST" id="deleteForm">
                     <input type="hidden" name="action" value="delete_user">
                     <input type="hidden" name="id_utilisateur" id="deleteUserId">
                     <div class="modal-body">
-                        <p>Êtes-vous sûr de vouloir supprimer cet utilisateur ?</p>
+                        <p>Êtes-vous sûr de vouloir désactiver l'utilisateur : <strong id="deleteUserName"></strong> ?</p>
+                        <div class="alert alert-info">
+                            <strong>Information:</strong> L'utilisateur ne pourra plus se connecter mais toutes ses données (y compris ses commandes) seront conservées.
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Annuler</button>
-                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                        <button type="submit" class="btn btn-danger">Désactiver</button>
                     </div>
                 </form>
             </div>
@@ -478,9 +492,10 @@ $users = $pdo->query("
             }
         }
 
-        // Fonction pour confirmer la suppression
-        function confirmDelete(userId) {
+        // Fonction pour confirmer la suppression (désactivation)
+        function confirmDelete(userId, userName) {
             document.getElementById('deleteUserId').value = userId;
+            document.getElementById('deleteUserName').textContent = userName;
             new bootstrap.Modal(document.getElementById('deleteUserModal')).show();
         }
 
