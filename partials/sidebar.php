@@ -25,65 +25,45 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#sidebarProducts" class="nav-link menu-link collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProducts">
-                        <i class="ti bi-box"></i> <span>Produits </span>
+                    <a href="apps-invoices-list.php" class="nav-link menu-link">
+                        <i class="ti bi-box"></i> <span>Liste des produits</span>
                     </a>
-                    <div class="collapse menu-dropdown" id="sidebarProducts">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="apps-invoices-list.php" class="nav-link">Liste des produits</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="search.php" class="nav-link">Recherche</a>
-                            </li>
-                        </ul>
-                    </div>
+                </li>
+
+
+                <li class="nav-item">
+                    <a href="nouvelle-vente.php" class="nav-link menu-link">
+                        <i class="ti bi-cart-check"></i> <span>Nouvelle vente</span>
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="#sidebarVentes" class="nav-link menu-link collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarVentes">
-                        <i class="ti bi-cart-check"></i> <span>Ventes</span>
+                    <a href="historique.php" class="nav-link menu-link">
+                        <i class="ti bi-clock-history"></i> <span>Historique</span>
                     </a>
-                    <div class="collapse menu-dropdown" id="sidebarVentes">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="nouvelle-vente.php" class="nav-link">Nouvelle vente</a>
-                            </li>
-                        </ul>
-                    </div>
                 </li>
 
-                <li class="nav-item">
-                    <a href="#sidebarHistory" class="nav-link menu-link collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarHistory">
-                        <i class="ti bi-calendar-check"></i> <span>Historique des ventes</span>
-                    </a>
-                    <div class="collapse menu-dropdown" id="sidebarHistory">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="apps-invoices-list.php" class="nav-link">Liste personnelle</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="apps-invoices-overview.php" class="nav-link">Détails d'une vente</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+               
 
+                
+
+               
+
+                <!-- Section Admin (seulement visible pour les administrateurs) -->
+                <?php if (isset($is_admin) && $is_admin): ?>
+                <li class="menu-title"><span data-key="t-admin">Administration</span></li>
                 <li class="nav-item">
-                    <a href="#sidebarSuivi" class="nav-link menu-link collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSuivi">
-                        <i class="ti bi-person-lines-fill"></i> <span>Suivi personnel</span>
+                    <a href="gestionUtilisateur.php" class="nav-link menu-link">
+                        <i class="ti bi-people"></i> <span>Gestion utilisateurs</span>
                     </a>
-                    <div class="collapse menu-dropdown" id="sidebarSuivi">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="apps-invoices-list.php" class="nav-link">Vos performances</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="apps-invoices-overview.php" class="nav-link">Comparaisons basiques</a>
-                            </li>
-                        </ul>
-                    </div>
                 </li>
+                <li class="nav-item">
+                    <a href="rapports.php" class="nav-link menu-link">
+                        <i class="ti bi-clipboard-data"></i> <span>Rapports</span>
+                    </a>
+                </li>
+               
+                <?php endif; ?>
 
             </ul>
         </div>
